@@ -3,105 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FILMEFLIX - Cara de Um, Focinho de Outro</title>
+<title>Minha Netflix</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
 body{
-    background:#000;
-    color:white;
+margin:0;
+background:#141414;
+color:white;
+font-family:Arial;
 }
 
 header{
-    background:#111;
-    padding:20px;
-    border-bottom:3px solid #00aaff;
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+display:flex;
+justify-content:space-between;
+padding:15px 30px;
+z-index:10;
 }
 
 .logo{
-    font-size:35px;
-    font-weight:bold;
-    color:#00aaff;
+color:#e50914;
+font-size:28px;
+font-weight:bold;
 }
 
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+}
+
+/* 🎬 BANNER ESTILO NETFLIX REAL */
 .banner{
-    background:linear-gradient(135deg,#8e44ad,#3498db);
-    min-height:500px;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    padding:50px;
-    flex-wrap:wrap;
+position:relative;
+width:100%;
+height:90vh;
+margin-top:60px;
+overflow:hidden;
 }
 
-.texto{
-    max-width:500px;
+.banner iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
 }
 
-.categoria{
-    background:#00aaff;
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:10px;
-    margin-bottom:20px;
-    font-weight:bold;
+.banner::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:40%;
+background:linear-gradient(to top, #141414, transparent);
 }
 
-h1{
-    font-size:55px;
-    margin-bottom:20px;
+.title{
+position:absolute;
+bottom:30px;
+left:30px;
+font-size:28px;
+z-index:2;
 }
 
-.descricao{
-    font-size:20px;
-    line-height:1.6;
+.section{
+padding:20px;
 }
 
-.video iframe{
-    width:560px;
-    height:315px;
-    border:none;
-    border-radius:15px;
+.row{
+display:flex;
+gap:10px;
+overflow-x:auto;
 }
 
-.galeria{
-    padding:30px;
+.thumb{
+width:180px;
+height:100px;
+background:#333;
+border-radius:6px;
+flex-shrink:0;
+cursor:pointer;
+transition:0.2s;
+background-size:cover;
 }
 
-.galeria h2{
-    color:#00aaff;
-    margin-bottom:20px;
-}
-
-.filmes{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-}
-
-.filmes img{
-    width:250px;
-    height:150px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:0.3s;
-}
-
-.filmes img:hover{
-    transform:scale(1.05);
-}
-
-footer{
-    text-align:center;
-    padding:20px;
-    background:#111;
-    margin-top:30px;
+.thumb:hover{
+transform:scale(1.05);
 }
 </style>
 </head>
@@ -109,48 +102,44 @@ footer{
 <body>
 
 <header>
-<div class="logo">FILMEFLIX</div>
+<div class="logo">MINHAFLIX</div>
+<nav>
+<a href="#">Início</a>
+<a href="#">Filmes</a>
+<a href="#">Séries</a>
+</nav>
 </header>
 
-<section class="banner">
+<!-- 🎬 FILME EM DESTAQUE REAL -->
+<div class="banner">
 
-<div class="texto">
+<iframe
+src="https://www.youtube.com/embed/Og-N4WaGRMU?autoplay=1&mute=1"
+allowfullscreen>
+</iframe>
 
-<div class="categoria">
-FILME EM DESTAQUE
-</div>
-
-<h1>CARA DE UM, FOCINHO DE OUTRO</h1>
-
-<p class="descricao">
-Uma divertida aventura cheia de amizade, humor e confusões.
-Acompanhe personagens incríveis em uma jornada emocionante
-para toda a família.
-</p>
+<div class="title">Filme em destaque</div>
 
 </div>
 
-<div class="video">
+<!-- 🎞️ LISTA -->
+<div class="section">
+<h2>Mais filmes</h2>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/24TPeChzIQ8?si=Vo6wWimWdzvfMBGW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="row">
+
+<div class="thumb"
+style="background-image:url('https://img.youtube.com/vi/Og-N4WaGRMU/hqdefault.jpg');"
+onclick="document.querySelector('iframe').src='https://www.youtube.com/embed/Og-N4WaGRMU?autoplay=1&mute=1'">
 </div>
 
-</section>
-
-<section class="galeria">
-
-<h2>Filmes e Séries</h2>
-
-<div class="filmes">
-
+<div class="thumb"></div>
+<div class="thumb"></div>
+<div class="thumb"></div>
 
 </div>
 
-</section>
-
-<footer>
-© 2026 FILMEFLIX - Projeto para GitHub Pages
-</footer>
+</div>
 
 </body>
 </html>
